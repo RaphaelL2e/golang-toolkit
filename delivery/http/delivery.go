@@ -27,7 +27,7 @@ func NewServer(opts ...ServerOption) *Server {
 
 	srv.Server = &http.Server{
 		Addr:              srv.address,
-		Handler:           srv.Handler,
+		Handler:           srv.router,
 		ReadHeaderTimeout: constant.HttpTimeout,
 	}
 	return srv
